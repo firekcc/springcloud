@@ -1,0 +1,50 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.11'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+allprojects {
+    group = 'com.firekcc.springcloud'
+    version = '1.0.0-SNAPSHOT'
+
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring/'
+        }
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: "org.springframework.boot"
+    apply plugin: "io.spring.dependency-management"
+
+    jar {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    ext {
+        set('springCloudVersion', "2020.0.4")
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:org.springframework.boot.gradle.plugin:2.5.5'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

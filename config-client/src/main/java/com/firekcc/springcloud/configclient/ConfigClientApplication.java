@@ -1,19 +1,21 @@
 package com.firekcc.springcloud.configclient;
 
 import io.leopard.javahost.JavaHost;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Properties;
 
-@EnableCaching
 @EnableDiscoveryClient
 @SpringBootApplication
+@RestController
 public class ConfigClientApplication {
 
     static {
@@ -22,6 +24,14 @@ public class ConfigClientApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ConfigClientApplication.class, args);
+    }
+
+    @Value("${config-from}")
+    String configFrom;
+
+    @RequestMapping(value = "/config")
+    public String hi(){
+        return configFrom;
     }
 
 

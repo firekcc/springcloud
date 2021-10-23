@@ -1,1 +1,0 @@
-#eureka.client.serviceUrl.defaultZone=http://eureka-master:8761/eureka/

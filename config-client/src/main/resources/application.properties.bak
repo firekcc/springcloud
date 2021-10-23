@@ -2,6 +2,6 @@ server.port=8090
 spring.application.name=config-client
 #spring.profiles.active=prod
 spring.profiles.include=eureka
-spring.cloud.config.import-check.enabled=false
 logging.level.com.firekcc= info
 logging.file.path= /data/logs/config-client
+#spring.cloud.config.import-check.enabled=false.

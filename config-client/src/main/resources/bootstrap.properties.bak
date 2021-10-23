@@ -1,7 +1,0 @@
-#开启配置服务发现
-#spring.application.name:app-server
-#spring.profiles.active:prod
-#spring.profiles.include:eureka,user
-#spring.cloud.config.discovery.enabled:true
-#spring.cloud.config.discovery.service-id:config-server
-

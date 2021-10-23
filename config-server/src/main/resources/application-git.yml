@@ -4,3 +4,4 @@ spring:
       server:
         git:
           uri: https://github.com/firekcc/config-properties.git
+          default-label: main

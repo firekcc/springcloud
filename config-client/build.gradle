@@ -5,6 +5,7 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.github.xiaoymin:knife4j-spring-boot-starter:2.0.9'
 	implementation 'com.github.ben-manes.caffeine:caffeine:3.0.4'
 	implementation 'io.leopard:javahost:0.9.12'
 }
